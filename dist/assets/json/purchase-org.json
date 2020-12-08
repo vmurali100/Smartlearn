@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Asia Genesis",
+        "code": "AP01",
+        "description": "Asia Genesis"
+    },
+    {
+        "id": 2,
+        "name": "Brazil",
+        "code": "BR01",
+        "description": "Brazil"
+    },
+    {
+        "id": 3,
+        "name": "Europe",
+        "code": "EU01",
+        "description": "Europe"
+    },
+    {
+        "id": 4,
+        "name": "North America",
+        "code": "NA01",
+        "description": "North America"
+    },
+    {
+        "id": 5,
+        "name": "South America",
+        "code": "SA01",
+        "description": "South America"
+    }
+]

@@ -1,0 +1,25 @@
+/** Mat table submenu - Edit pages **/
+table {
+  width: 100%;
+}
+
+tr.submenu-detail-row {
+  height: 0;
+}
+
+tr.submenu-element-row:not(.submenu-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.submenu-element-row:not(.submenu-expanded-row):active {
+  background: #efefef;
+}
+
+.submenu-element-row td {
+  border-bottom-width: 0;
+}
+
+.submenu-element-detail {
+  overflow: hidden;
+  display: flex;
+}

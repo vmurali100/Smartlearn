@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "USA",
+    "code": "USD",
+    "description": "percent"
+  },
+  {
+    "id": 1,
+    "name": "Canada",
+    "code": "INR",
+    "description": "per mile"
+  },
+  {
+    "id": 1,
+    "name": "Mexico",
+    "code": "Eur",
+    "description": "Each"
+  },
+  {
+    "id": 1,
+    "name": "Cuba",
+    "code": "AFN",
+    "description": "Each"
+  },
+  {
+    "id": 1,
+    "name": "Panama",
+    "code": "ANG",
+    "description": "Fahrenheit"
+  }
+]

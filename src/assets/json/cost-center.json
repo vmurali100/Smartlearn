@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "QAD COE US",
+        "code": "30001264",
+        "description": "QAD COE US",
+        "owner": null,
+        "financeController": null,
+        "finanaceControllerManager": null
+    },
+    {
+        "id": 2,
+        "name": "IT Solutions Deliver",
+        "code": "30001269",
+        "description": "IT Solutions Deliver",
+        "owner": null,
+        "financeController": null,
+        "finanaceControllerManager": null
+    },
+    {
+        "id": 2,
+        "name": "M&A Activity US",
+        "code": "30001279",
+        "description": "M&A Activity US",
+        "owner": null,
+        "financeController": null,
+        "finanaceControllerManager": null
+    },
+    {
+        "id": 2,
+        "name": "Information Security",
+        "code": "30001285",
+        "description": "Information Security",
+        "owner": null,
+        "financeController": null,
+        "finanaceControllerManager": null
+    },
+    {
+        "id": 2,
+        "name": "EI and BI Base US",
+        "code": "30001296",
+        "description": "EI and BI Base US",
+        "owner": null,
+        "financeController": null,
+        "finanaceControllerManager": null
+    }
+]

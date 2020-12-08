@@ -1,0 +1,151 @@
+<app-header class="" [fixed]="true"
+  [navbarBrandFull]="{src: 'assets/img/brand/adient_logo_onwhite.png', width: 125, height: 65, alt: 'Adient Logo'}"
+  [navbarBrandMinimized]="{src: 'assets/img/brand/adient_logo_onwhite.png', width: 125, height: 65, alt: 'Adient Logo'}"
+  [asideMenuToggler]="false" [mobileAsideMenuToggler]='false' [sidebarToggler]="'lg'"
+  style="background-color: #ffffff !important">
+  <a class="navbar-brand adient-brand" href="#">
+    &nbsp;<span class="brand-text-dark" style="color: #00465B">{{title1}}</span><span
+      class="brand-text-light">{{title2}}</span>
+  </a>
+  <a class="navbar-brand adient-brand header-brand" href="#" style="color: #00465B">
+    {{applicationName}}
+  </a>
+  <ul class="nav nav-menu navbar-nav ml-auto">
+    <li class="nav-item dropdown menu-active" dropdown placement="bottom right">
+      <!-- <button class="btn menu-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false" dropdownToggle (click)="false">
+        Create
+      </button> -->
+      <div class="dropdown-menu dropdown-menu-right" style="left: auto; right: 0px; min-width: 300px !important;"
+        *dropdownMenu aria-labelledby="simple-dropdown">
+        <a *ngIf="user === 'admin'|| user === 'user' " class="dropdown-item" (click)="navigateToCreateRequest()">
+          <i class="fa  fa-pencil-square-o nav-submenu-icon"></i> New Request
+        </a>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown" dropdown placement="bottom right" style="margin-left: 20px;">
+      <!-- <button class="btn menu-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false" dropdownToggle (click)="false">
+        Help
+      </button> -->
+      <div class="dropdown-menu dropdown-menu-right" style="left: auto; right: 0px; min-width: 200px !important;"
+        *dropdownMenu aria-labelledby="simple-dropdown">
+        <a class="dropdown-item" (click)="openHelp()" href="javascript:void(0);">
+          <i class="fa fa-life-ring nav-submenu-icon"></i>Support
+        </a>
+        <a class="dropdown-item" (click)="openHelpTutorials()" href="javascript:void(0);">
+          <i class="fa fa-question-circle-o nav-submenu-icon"></i>Tutorials
+        </a>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link nav-menu-space" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+        aria-expanded="false" dropdownToggle (click)="false">
+        <!-- <i class="material-icons" style="font-size: 20px;">add_alert</i> -->
+        <i class="material-icons material-icons-outlined">notifications</i>
+        <span class="badge badge-pill badge-danger">0</span>
+      </a>
+
+      <div class="dropdown-menu dropdown-menu-right" style="left: auto; right: 0px; min-width: 300px !important;"
+        *dropdownMenu aria-labelledby="simple-dropdown">
+
+        <div class="message" style="padding: 8px 10px; text-align: center;">
+          <mat-hint><i class="fa fa-info-circle" aria-hidden="true"></i> No Notications
+          </mat-hint>
+        </div>
+
+        <!-- <a *ngIf="user === 'admin'|| user === 'user' " class="dropdown-item" [routerLink]="['/saa/create-saa-request']">
+          <i class="fa  fa-pencil-square-o nav-submenu-icon"></i> New Request
+        </a> -->
+
+      </div>
+    </li>
+
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <!-- <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+        dropdownToggle (click)="false">
+        <img src="assets/img/avatars/1.png" class="img-avatar" alt="user_profile_pic" />
+      </a> -->
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+        dropdownToggle (click)="false">
+        <i class="material-icons">settings</i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" style="left: auto; right: 0px; min-width: 300px !important;"
+        *dropdownMenu aria-labelledby="simple-dropdown">
+        <div class="dropdown-header-main text-center"><strong>Vinod Manoharan</strong></div>
+        <div class="dropdown-header text-center"><strong>Settings</strong></div>
+        <a class="dropdown-item" [routerLink]="['/coming-soon']">
+          <i class="fa fa-user-o nav-submenu-icon"></i> Profile
+        </a>
+        <a class="dropdown-item" [routerLink]="['/coming-soon']">
+          <i class="fa fa-shield nav-submenu-icon"></i> Change Password
+        </a>
+        <a class="dropdown-item" [routerLink]="['/admin/dashboard']" (click)="switchUser('admin')">
+          <i class="fa fa-cogs nav-submenu-icon"></i>Switch to "Admin" profile
+        </a>
+        <a class="dropdown-item" [routerLink]="['/dashboard']" (click)="switchUser('user')">
+          <i class="fa fa-user-o nav-submenu-icon"></i>Switch to "User" profile
+        </a>
+        <a class="dropdown-item" [routerLink]="['/login']" (click)="logout()">
+          <i class="fa fa-sign-out nav-submenu-icon"></i>Logout
+        </a>
+      </div>
+    </li>
+  </ul>
+</app-header>
+
+<div class="app-body" [style.marginTop]="navigationClosed ? '0' : ''">
+  <app-sidebar #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized"
+    (minimizedChange)="toggleMinimize($event)">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!--<div [style.display]="navigationClosed ? 'flex' : 'none'"-->
+  <!--class="open-office-display" (click)="toggleOfficeDisplay()">-->
+  <!--<mat-icon title="Click here to exit Office UI">fullscreen_exit</mat-icon>-->
+  <!--</div>-->
+  <!-- Main content -->
+  <main class="main" (click)="toggleSideNav()">
+    <!--<ol class="breadcrumb" style="background-color: #E7E8E9;">
+            <li class="breadcrumb-menu d-md-down-none">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <a class="btn" [routerLink]="['/dashboard']" routerLinkActive="active-link"><i
+                            class="fa fa-tachometer nav-submenu-icon"></i>
+                        &nbsp;Dashboard</a>
+
+                     <a class="btn" [routerLink]="['/pr/my-pr']" routerLinkActive="active-link"><i
+                            class="fa fa-file-text-o nav-submenu-icon"></i>
+                        &nbsp;Purchase
+                        Requisitions</a>
+
+                    <a class="btn" [routerLink]="['/purchase-order']" routerLinkActive="active-link"><i
+                            class="fa fa-file-excel-o nav-submenu-icon"></i> &nbsp;Purchase
+                        Orders</a>
+
+                    <a class="btn" [routerLink]="['/invoices']" routerLinkActive="active-link"><i
+                            class="fa fa-files-o nav-submenu-icon"></i>
+                        &nbsp;Invoices</a>
+
+                    <a class="btn" [routerLink]="['/dashboard']" routerLinkActive="active-link"><i
+                            class="fa fa-line-chart nav-submenu-icon"></i>
+                        &nbsp;Sourcing</a>
+                </div>
+            </li>
+        </ol> -->
+    <div style="background-color: #ffffff">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+</div>
+<app-footer class="cfooter">
+  <div class="ml-auto" style="text-align: right;">
+    <span style="font-weight: bold !important;font-size: 15px;
+          color: #23282c;">Powered by</span>&nbsp;
+    <a>
+      <img src="assets/img/smartapps-dark.png" alt="SmartApps" class="appfooter-image" />
+    </a>
+  </div>
+</app-footer>

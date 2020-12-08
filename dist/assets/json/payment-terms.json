@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Within 30 days Due net",
+        "code": "PT30",
+        "description": "Within 30 days Due net"
+    },
+    {
+        "id": 1,
+        "name": "Within 60 days Due net",
+        "code": "PT60",
+        "description": "Within 60 days Due net"
+    },
+    {
+        "id": 1,
+        "name": "Within 90 days Due net",
+        "code": "PT90",
+        "description": "Within 90 days Due net"
+    },
+    {
+        "id": 1,
+        "name": "Within 120 days Due net",
+        "code": "PT120",
+        "description": "Within 120 days Due net"
+    }
+]

@@ -1,0 +1,132 @@
+<div class="col-12 help-dialog">
+    <mat-tab-group>
+        <mat-tab label="Create Ticket">
+            <form [formGroup]="createTicketForm">
+                <div class="col-12 row" style="margin-top: 10px;">
+                    <div class="col-12">
+                        <div class="form-group col-12 paddingzero margin-bottom-0">
+                            <h4 class="section-header">Ticket Information</h4>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10 row">
+                        <div class="col-4 details-key-main">
+                            <div class="col-12">
+                                Type<span class="required">&nbsp;*</span>
+                            </div>
+                        </div>
+                        <div class="col-8" style="margin-top: 20px;margin-bottom: 20px;">
+                            <div class="form-group col-12 paddingzero margin-bottom-0 row">
+                                <div class="col-12">
+                                    <mat-radio-group style="margin-left: 15px;" formControlName="type" name="type">
+                                        <mat-radio-button value="incident">Incident</mat-radio-button> &nbsp;&nbsp;
+                                        <mat-radio-button value="request">Request</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10 row">
+                        <div class="col-4 details-key-main">
+                            <div class="col-12">
+                                Priority<span class="required">&nbsp;*</span>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="form-group col-12 paddingzero margin-bottom-0 row">
+                                <div class="col-12">
+                                    <mat-form-field class="col-12" appearance="outline">
+                                        <input matInput formControlName="priority" name="priority" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-10 row">
+                        <div class="col-4 details-key-main">
+                            <div class="col-12">
+                                Description<span class="required">&nbsp;*</span>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="form-group col-12 paddingzero margin-bottom-0 row">
+                                <div class="col-12">
+                                    <mat-form-field class="col-12" appearance="outline">
+                                        <textarea matInput formControlName="description" name="description"
+                                            required></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 3%;">
+                    <div class="col-7" style="text-align: right;">
+                        <button class="btn btn-adient" mat-button (click)="createTicket()">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row" style="margin-bottom: 3%;">
+                <div class="col-12" style="text-align: center;font-size: 2em;">
+                    <h2 class="coming-soon">Coming Soon</h2>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="View Ticket Status">
+            <div class="row col-12" style="margin-top:5%;">
+                <table mat-table [dataSource]="ticketsDataSource"
+                class="mat-elevation-z8 margin-bottom-20 col-12" matSort style="margin-left:2%;margin-right: 2%;">
+                <ng-container [matColumnDef]="column.ColumnCode"
+                    *ngFor="let column of displayedColumnObjects">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                        [ngStyle]="{'background-color': '#E7E8E9','min-height':'80px','white-space': 'nowrap','text-align':'left','padding':'5px'}">
+                        {{column.ColumnName}} </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: left;padding:5px;">
+                        <ng-container
+                            *ngIf="column.ColumnCode === 'ticketNumber'">
+                            <a href="https://adientprod.service-now.com" target="_blank">{{element[column.ColumnCode]}}</a>
+                        </ng-container>
+                        <ng-container
+                            *ngIf="column.ColumnCode !== 'ticketNumber' && column.ColumnCode !== 'created' && column.ColumnCode !== 'resolved'">
+                            {{element[column.ColumnCode]}}
+                        </ng-container>
+                        <ng-container
+                            *ngIf="column.ColumnCode === 'created' || column.ColumnCode === 'resolved'">
+                            <span *ngIf="null!=element[column.ColumnCode] && 
+                            undefined!=element[column.ColumnCode]">{{element[column.ColumnCode] | date}}</span>
+                        </ng-container>
+                    </td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            </div>  
+            <div class="row" style="margin-bottom: 3%;">
+                <div class="col-12" style="text-align: center;font-size: 2em;">
+                    <h2 class="coming-soon">Coming Soon</h2>
+                </div>
+            </div>         
+        </mat-tab>
+        <mat-tab label="Chat">
+            <div class="row" style="margin-top: 3%;margin-bottom: 1%;">
+                <div class="col-12" style="text-align: center;">
+                    <img src="assets/img/chatbot.jpg" class="img" alt="Chat Bot" height="300" width="350" />
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 3%;">
+                <div class="col-12" style="text-align: center;font-size: 2em;">
+                    <h2 class="coming-soon">Coming Soon</h2>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

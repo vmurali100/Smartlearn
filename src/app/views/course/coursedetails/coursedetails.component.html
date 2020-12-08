@@ -1,0 +1,27 @@
+<div class="wrpper">
+    <div class="container">
+      <h2></h2>
+      <video controls (ended)="vidEnded()" width="600px" style="margin-top: 30px">
+        <source src="assets/angular.mp4" type="video/mp4" />
+      </video>
+      <br />
+  
+      <!-- <Button
+        (click)="startQuizEvent()"
+        *ngIf="isEnded"
+        class="btn btn-primary"
+        routerLink="/quiz"
+        >Launch Quiz</Button
+      > -->
+     
+      <img class="quiz" (click)="startQuizEvent()"
+      *ngIf="isEnded" routerLink="/quiz" src="./../../../../assets/question-circle-solid.svg" alt="">
+      <!-- <Button >Back To Dashbord</Button> -->
+      <!-- <img
+        src="assets/back.png"
+        alt="Back"
+        routerLink="/dashboard"
+        style="width: 50px; margin-left: 20px; cursor: pointer"
+      /> -->
+    </div>
+  </div>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "requestType": "Indirect",
+    "description": "Group Purchasing America",
+    "minThreshold": "100,000",
+    "maxThreshold": "500,000",
+    "region": "NA",
+    "country": "USA",
+    "location": "All",
+    "workgroups": "WG_Managers, WG_Sr. Managers, WG_VPs"
+  },
+  {
+    "id": 2,
+    "requestType": "Indirect",
+    "description": "Group Purchasing America",
+    "minThreshold": "100,000",
+    "maxThreshold": "500,000",
+    "region": "NA",
+    "country": "USA",
+    "location": "All",
+    "workgroups": "WG_Managers, WG_Sr. Managers, WG_VPs"
+  },
+  {
+    "id": 3,
+    "requestType": "Indirect",
+    "description": "Group Purchasing America",
+    "minThreshold": "100,000",
+    "maxThreshold": "500,000",
+    "region": "NA",
+    "country": "USA",
+    "location": "All",
+    "workgroups": "WG_Managers, WG_Sr. Managers, WG_VPs"
+  }
+]

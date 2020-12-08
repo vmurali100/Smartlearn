@@ -1,0 +1,149 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~material-design-icons/iconfont/material-icons.css';
+
+
+
+.mat-tab-label.mat-tab-label-active {
+  background: #0f445b;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  opacity: 1;
+}
+
+.mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+    color:#0f445b !important;;
+}
+
+.mat-tab-label-subheader {
+  background: #0f445b !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #bfd732 !important;
+}
+
+.mat-tab-label .mat-tab-label-content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+     font-family: Adient Sans, Verdana, sans-serif !important;
+}
+
+.mat-table thead{
+    background-color:#E7E8E9;
+}
+
+.mat-tab-body-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    transition: height .5s cubic-bezier(.35,0,.25,1);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  font-size: inherit;
+  justify-content: center;
+  color: #0f445b;
+}
+
+/** Mata Radio in Adient Teal */
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #00465b;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #00465b;
+}
+
+/** Mat check box  Adient Teal*/
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background: #00465b;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+    background: #00465b;
+}
+
+.mat-form-field-label {
+    color: #00465b !important;
+    -webkit-text-fill-color: #00465b !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #bfd732 !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #bfd732 !important;
+}
+
+.mat-dialog-container {
+    padding: 15px 0 15px 0 !important;
+}
+
+.cdk-overlay-pane.my-dialog {
+  position: relative!important;
+}
+.close.mat-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  line-height: 14px;
+  min-width: auto;
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active {
+    color: #00465B !important;
+    font-weight: bold !important;;
+}
+
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: #00465B;
+    color: #fff;
+}
+
+.material-icons.md-12 { font-size: 12; }
+.material-icons.md-14 { font-size: 14; }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.mat-stepper-horizontal-line {
+    width: 3%!important;
+    min-width: 3%!important;
+    max-width: 3%!important;
+}
+
+.mat-card-title {
+    display: block;
+    margin-bottom: 8px;
+    color: #4d4d4d !important;
+    font-weight: bolder;
+}
+  .mat-tooltip-adient{
+    background: #607799;
+    font-size: 12px;
+  }
+
+.mat-suffix-icon-gray{
+    color: gray;
+    font-weight: bolder;
+}
+
+
+@media only screen and (min-device-width: 370px) and (max-device-width: 814px) and (orientation: portrait) {
+    .mat-cell {
+        height: auto !important;
+    }
+}
+

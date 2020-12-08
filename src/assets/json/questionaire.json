@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Supplier Questionaire",
+        "code": "389280"
+    },
+    {
+        "id": 1,
+        "name": "Basic Questionaire",
+        "code": "389280"
+    },
+    {
+        "id": 1,
+        "name": "General Questionaire",
+        "code": "389280"
+    },
+    {
+        "id": 1,
+        "name": "Custom Apps Questionaire",
+        "code": "389280"
+    },
+    {
+        "id": 1,
+        "name": "Managed Services Questionaire",
+        "code": "389280"
+    },
+    {
+        "id": 1,
+        "name": "Budget Questionaire",
+        "code": "389280"
+    },
+    {
+        "id": 1,
+        "name": "Team Questionaire",
+        "code": "389280"
+    },
+    {
+        "id": 1,
+        "name": "Contract Questionaire",
+        "code": "389280"
+    }
+]

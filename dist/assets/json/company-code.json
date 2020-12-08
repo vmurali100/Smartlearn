@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Adient US LLC",
+        "code": "3000",
+        "description": "Adient US LLC"
+    },
+    {
+        "id": 2,
+        "name": "Adient System Engrg",
+        "code": "3017",
+        "description": "Adient System Engrg"
+    },
+    {
+        "id": 3,
+        "name": "Futuris Automotive(US)Inc",
+        "code": "3019",
+        "description": "Futuris Automotive(US)Inc"
+    },
+    {
+        "id": 4,
+        "name": "CNI Enterprises Inc",
+        "code": "3021",
+        "description": "CNI Enterprises Inc"
+    },
+    {
+        "id": 5,
+        "name": "Adient S S Mexico",
+        "code": "3075",
+        "description": "Adient S S Mexico"
+    }
+]

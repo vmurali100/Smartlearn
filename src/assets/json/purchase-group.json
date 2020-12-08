@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "NA-Metal Op.Purch",
+        "code": "321",
+        "description": "NA-Metal Op.Purch"
+    },
+    {
+        "id": 2,
+        "name": "NA-Stampings",
+        "code": "322",
+        "description": "NA-Stampings"
+    },
+    {
+        "id": 3,
+        "name": "NA-Specialty Metal",
+        "code": "323",
+        "description": "NA-Specialty Metal"
+    },
+    {
+        "id": 3,
+        "name": "NA-Mechanisms",
+        "code": "324",
+        "description": "NA-Mechanisms"
+    },
+    {
+        "id": 3,
+        "name": "Group Office Seating",
+        "code": "325",
+        "description": "Group Office Seating"
+    }
+]

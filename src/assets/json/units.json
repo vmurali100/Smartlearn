@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "%",
+        "code": "percent",
+        "description": "percent"
+    },
+    {
+        "id": 1,
+        "name": "%0",
+        "code": "per mile",
+        "description": "per mile"
+    },
+    {
+        "id": 1,
+        "name": "each",
+        "code": "EA",
+        "description": "Each"
+    },
+    {
+        "id": 1,
+        "name": "°C",
+        "code": "Degrees Celsius",
+        "description": "Each"
+    },
+    {
+        "id": 1,
+        "name": "°F",
+        "code": "Fahrenheit",
+        "description": "Fahrenheit"
+    }
+]

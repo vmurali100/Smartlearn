@@ -1,0 +1,93 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+  <div class="row" style="margin : 10px">
+    <div class="box-one col-sm-12 col-md-12 col-lg-12 paddingzero build-code-form">
+      <div class="col-12 col-sm-12 col-lg-12 col-md-12">
+        <div class="row">
+          <div class="col-3 paddingzero">
+            <mat-form-field class="mt-2" style="margin-right: 10px;">
+              <mat-label>Columns</mat-label>
+              <mat-select multiple [(ngModel)]="selectedMastercolumns">
+                <mat-select-trigger>
+                  <span *ngIf="selectedMastercolumns?.length === displayedColumnObjects.length">
+                    {{'All'}}
+                  </span>
+                  <span *ngIf="selectedMastercolumns?.length > 1">
+                    ({{selectedMastercolumns?.length > 1 ? 'Multiple Selected' : ''}})
+                  </span>
+                  <span *ngIf="selectedMastercolumns?.length === 1">
+                    ({{selectedMastercolumns}})
+                  </span>
+                </mat-select-trigger>
+                <mat-option [value]="column.ColumnCode" *ngFor="let column of displayedColumnObjects"
+                  (click)="toggleColumns()">
+                  {{ column.ColumnName }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-9 d-flex justify-content-end align-items-lg-end flex-wrap paddingzero">
+            <!-- <div class="input-group mb-3 mt-2 search-master col-2 justify-content-end">
+                <button class="btn btn-outline-primary adient-btn" [matMenuTriggerFor]="menu"
+                  aria-label="Example icon-button with a menu">
+                  Actions
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item [routerLink]="['/saa/create-saa-request']">
+                    <mat-icon>content_copy</mat-icon>
+                    <span>Clone SAA</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>clear</mat-icon>
+                    <span>Delete SAA</span>
+                  </button>
+                </mat-menu>
+              </div> -->
+            <div class="input-group mb-3 mt-2 search-master col-4 paddingzero">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </div>
+              <input type="text" placeholder="Search" (keyup)="applyFilterMaster()" [(ngModel)]="searchMaster"
+                class="form-control">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div style="overflow: auto;">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 margin-bottom-20 col-12" matSort>
+          <ng-container [matColumnDef]="column.ColumnCode" *ngFor="let column of displayedColumnObjects">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header
+              [ngStyle]="{'background-color': '#E7E8E9','min-height':'80px','white-space': 'nowrap'}">
+              {{column.ColumnName}} </th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container *ngIf="column.ColumnCode === 'select'">
+                <mat-checkbox>
+                </mat-checkbox>
+              </ng-container>
+              <ng-container *ngIf="column.ColumnCode !== 'request'">
+                {{element[column.ColumnCode]}}
+              </ng-container>
+              <ng-container *ngIf="column.ColumnCode === 'request'">
+                <ng-container *ngIf="column.RedirectURL !== ''">
+                  <a [routerLink]="[column.RedirectURL, element[column.ColumnCode]]">{{element[column.ColumnCode]}}</a>
+                </ng-container>
+                <ng-container *ngIf="column.RedirectURL === ''">
+                  {{element[column.ColumnCode]}}
+                </ng-container>
+              </ng-container>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+          <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+        </table>
+      </div>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons>
+      </mat-paginator>
+    </div>
+  </div>
+
+</div>

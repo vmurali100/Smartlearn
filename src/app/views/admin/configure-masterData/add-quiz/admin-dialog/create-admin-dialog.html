@@ -1,0 +1,189 @@
+<div class="col-12">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 headerWrapper row">
+    <div class="col-12">
+      <h4 class="page-header"><span style="color: #bfd732"> π π π </span>Add Quiz </h4>
+      <button class="close" tabindex='-1' mat-button (click)=" onNoClick()">X</button>
+      <hr>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="container-fluid" style="margin-top: 20px; margin-bottom: 10px;">
+      <div class="col-12 row">
+        <div class="form-group col-6 paddingzero">
+          <mat-form-field class="col-12" appearance="outline">
+            <mat-label class="col-sm-12 col-lg-6">Course ID </mat-label>
+            <input matInput placeholder="Enter Course ID " name="CostCenter" required>
+          </mat-form-field>
+        </div>
+        <div class="form-group col-6 paddingzero">
+          <mat-form-field class="col-12" appearance="outline">
+            <mat-label class="col-sm-12 col-lg-6"> Course Name</mat-label>
+            <input matInput placeholder="Enter Course Name " name="CostCenter" required>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div class="col-12 row">
+        <!-- <label class="switch" [formGroup]="addForm">
+          <input type="checkbox" class="form-control" formControlName="items">
+          <span class="slider round">
+            <span class="No">
+              {{addForm.value.items_value}}
+            </span> 
+            <span class="yes">
+              {{addForm.value.items_value}}
+            </span>
+          </span>
+          </label> -->
+        <!-- <label class="switch" [formGroup]="addForm">
+          <input class="switch-input" type="checkbox" formControlName="items" />
+          <span class="switch-label" data-on="Yes" data-off="No"></span>
+          <span class="switch-handle"></span>
+        </label> -->
+        <button class="btn btn-adient" (click)="addQuestion()">Add Question</button>
+
+      </div>
+      <div class="col-12 row" [formGroup]="rowsForm">
+        <table class="table table-bordered">
+          <!-- <thead>
+            <tr>
+              <th>
+                Question
+              </th>
+              <th>
+                Name
+              </th>
+              <th>Answer</th>
+              <th>
+                Action
+              </th>
+            </tr>
+          </thead> -->
+          <tbody class="text-center bb-font b_text" [formArrayName]="'rows'">
+            <tr *ngFor="let item of rowsArray().controls; let i=index" [formGroupName]="i">
+              <ng-container>
+                <td>
+                  <mat-form-field class="col-12" appearance="outline">
+                    <mat-label class="col-sm-12 col-lg-6">Question </mat-label>
+                    <input matInput [formControl]="item.get('name')" placeholder="Enter Course ID ">
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <mat-label> Question Type</mat-label>
+                    <select matNativeControl [formControl]="item.get('description')" required>
+                      <option value="Single choice">Single choice</option>
+                      <option value="multiple choice">Multiple choice</option>
+                      <option value="image">Image</option>
+                      <option value="draganddrop">Draganddrop</option>
+                    </select>
+                  </mat-form-field>
+                </td>
+                <td *ngIf="item.get('description').value">
+                  <div class="form-group paddingzero" *ngIf="item.get('description').value === 'Single choice'">
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> </mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group paddingzero" *ngIf="item.get('description').value === 'multiple choice'">
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> Ans</mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> Ans</mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> Ans</mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> Ans</mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group paddingzero" *ngIf="item.get('description').value === 'image'">
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> Img</mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> Img</mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> Img</mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                    <mat-form-field class="col-12" appearance="outline">
+                      <mat-label class="col-sm-12 col-lg-6"> Img</mat-label>
+                      <input matInput [formControl]="item.get('qty')" placeholder="Enter Ans" name="CostCenter"
+                        required>
+                    </mat-form-field>
+                  </div>
+                  <!-- <div class="form-group paddingzero" *ngIf="item.get('description').value === 'image'">
+                    <input class="form-control" #file type="file" accept="image/*" (change)="filesSelected($event)">
+                  </div> -->
+                  <div class="form-group paddingzero" *ngIf="item.get('description').value === 'draganddrop'">
+  
+                    <div cdkDropListGroup>
+                      <div class="example-container">
+                        <h5>From</h5>
+
+                        <div cdkDropList [cdkDropListData]="todo" class="example-list"
+                          (cdkDropListDropped)="drop($event)">
+                          <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+
+                      <div class="example-container">
+                        <h5>To</h5>
+
+                        <div cdkDropList [cdkDropListData]="done" class="example-list"
+                          (cdkDropListDropped)="drop($event)">
+                          <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </td>
+                <td *ngIf="item.get('description').value">
+                  <mat-form-field class="col-12" appearance="outline">
+                    <mat-label class="col-sm-12 col-lg-6">Answer</mat-label>
+                    <input matInput [formControl]="item.get('ans')" placeholder="Enter Answer ">
+                  </mat-form-field>
+                </td>
+                <td>
+                <td>
+                  <button class="btn redColor" (click)="removeRow(i)"><i class="fa fa-trash-o fa-lg"></i></button>
+                </td>
+              </ng-container>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 pull-right-align">
+        <div class="col-12 pull-right-align">
+          <div class="col-12 pull-right-align">
+            <button class="btn btn-adient" (click)=" onNoClick()">Cancel</button> &nbsp;&nbsp;
+            <button class="btn btn-adient">Create</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

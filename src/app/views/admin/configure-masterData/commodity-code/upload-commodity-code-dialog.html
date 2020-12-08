@@ -1,0 +1,26 @@
+<div class="col-12">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 headerWrapper row">
+    <div class="col-12">
+      <h4 class="page-header"><span style="color: #bfd732"> π π π </span>Upload Commodity </h4>
+      <button class="close" tabindex='-1' mat-button (click)=" onNoClick()">X</button>
+      <hr>
+    </div>
+  </div>
+  <div class="container-fluid" style="margin-top: 20px; margin-bottom: 10px;">
+    <div class="col-12 row">
+      <div class="form-group col-12 paddingzero">
+        <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="customFile" name="filename">
+        <label class="custom-file-label" for="customFile" (change)="uploadFile($event)">Browse....</label>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-12 pull-right-align">
+    <div class="col-12 pull-right-align">
+      <div class="col-12 pull-right-align">
+        <button class="btn btn-adient">Cancel</button> &nbsp;&nbsp;
+        <button class="btn btn-adient">Upload</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Group Purchasing America",
+    "code": "403265",
+    "level": "1",
+    "description": "Group Purchasing America",
+    "region": "NA",
+    "country": "USA",
+    "location": "All"
+  },
+  {
+    "id": 2,
+    "name": "Group Procurment North US",
+    "code": "403266",
+    "level": "2",
+    "description": "Group Procurment North US",
+    "region": "NA",
+    "country": "USA",
+    "location": "Plymouth, Northwood, Detroit, Ann Harbour"
+  },
+  {
+    "id": 3,
+    "name": "Group_CIO",
+    "level": "3",
+    "code": "403267",
+    "description": "Group_CIO",
+    "region": "All",
+    "country": "All",
+    "location": "All"
+  }
+]

@@ -1,0 +1,135 @@
+<div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 headerWrapper row">
+      <div class="col-12">
+        <h3 class="page-header"><span style="color: #bfd732"> π π π </span>Create New Request</h3>
+        <hr>
+      </div>
+    </div>
+    <div class="col-12 card-box">
+      <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span>
+              General Information
+            </span>
+          </ng-template>
+          <div class="col-12" style="margin-top: 20px">
+            <app-dynamic-form [fields]="tab1" (submit)="submit($event, 'General Information')">
+            </app-dynamic-form>
+          </div>
+          <div class="col-12 footer-main-div">
+            <div class="shopping-cart-footer">
+              <div class="column">
+                <a class="btn-get-started cursor-pointer">Back</a>
+                <a class="btn-get-started cursor-pointer"
+                  (click)="getSectionData1(tab1, 'General Information'); navigateToTab(1)">Next</a>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span>
+              PDx Key Financial Breakdown
+            </span>
+          </ng-template>
+          <div class="col-12" style="margin-top: 20px">
+            <app-dynamic-form [fields]="tab2" (submit)="submitTab2($event, 'PDx Key Financial Breakdown')">
+            </app-dynamic-form>
+          </div>
+          <div class="col-12 footer-main-div">
+            <div class="shopping-cart-footer">
+              <div class="column">
+                <a class="btn-get-started cursor-pointer" (click)="navigateToTab(1)">Back</a>
+                <a class="btn-get-started cursor-pointer"
+                  (click)="getSectionData1(tab2, 'PDx Key Financial Breakdown');navigateToTab(3)">Next</a>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span>
+              Attachments
+            </span>
+          </ng-template>
+          <div class="col-12" style="margin-top: 20px; margin-bottom: 20px;">
+            <app-dynamic-form [fields]="tab3" (submit)="submitTab3($event, 'Attachments')">
+            </app-dynamic-form>
+          </div>
+          <div class="col-12 footer-main-div">
+            <div class="shopping-cart-footer">
+              <div class="column">
+                <a class="btn-get-started cursor-pointer" (click)="navigateToTab(2)">Back</a>
+                <a class="btn-get-started cursor-pointer"
+                  (click)="getSectionData1(tab3, 'Attachments');navigateToTab(4)">Next</a>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <span>
+              Review and Submit
+            </span>
+          </ng-template>
+          <div class="col-12 row" style="margin-top: 20px">
+            <ng-container *ngFor="let rdata of reviewData">
+              <div class="col-6">
+                <div class="col-12">
+                  <h6 class="tab-header text-uppercase bg-light p-2 mt-0 mb-3">{{ rdata.pageName}}</h6>
+                </div>
+                <div class="col-12 row requestor-detail" *ngFor="let sdata of rdata.data">
+                  <div class="col-3 details-key">
+                    {{ sdata.displayName }} :
+                  </div>
+                  <div class="col-9 details-value">
+                    <ng-container *ngIf="sdata.type === 'select' && sdata.value !== undefined">
+                      {{ sdata.value.value }}
+                    </ng-container>
+                    <ng-container *ngIf="sdata.type === 'date' && sdata.value !== undefined">
+                      {{ sdata.value | date:'mediumDate' }}
+                    </ng-container>
+                    <ng-container *ngIf="sdata.type === 'multiselect' && sdata.value !== undefined">
+                      <ng-container *ngFor="let val of sdata.value">
+                        {{val.value}},
+                      </ng-container>
+                    </ng-container>
+
+                    <ng-container *ngIf="sdata.type === 'kendofileupload' && sdata.value !== undefined">
+                      <ng-container *ngFor="let val of sdata.value">
+                        <a href="assets/temp/Purchase Order.pdf" download="Document" target="_blank"><i
+                            class="fa fa-download" aria-hidden="true" style="font-size: medium"></i>&nbsp;{{val.name}}
+                        </a>
+                      </ng-container>
+                    </ng-container>
+                    <ng-container
+                      *ngIf="sdata.type !== 'select' && sdata.type !== 'date' && sdata.type !== 'multiselect' && sdata.type !== 'kendofileupload' && sdata.value !== undefined">
+                      {{ sdata.value }}
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+          <div class="col-12 footer-main-div">
+            <div class="shopping-cart-footer">
+              <div class="column">
+                <a class="btn-get-started cursor-pointer" (click)="navigateToTab(3)">Back</a>
+                <a class="btn-get-started cursor-pointer">Submit</a>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+
+
+  </div>
+</div>

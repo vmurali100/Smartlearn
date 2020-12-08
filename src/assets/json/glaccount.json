@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "3rd Party Processing",
+        "code": "57290",
+        "description": "3rd Party Processing"
+    },
+    {
+        "id": 2,
+        "name": "Salary Labor 3rd party contractors",
+        "code": "55010",
+        "description": "Salary Labor 3rd party contractors"
+    },
+    {
+        "id": 3,
+        "name": "Software Maintenance",
+        "code": "57030",
+        "description": "Software Maintenance"
+    }
+]

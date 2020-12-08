@@ -1,0 +1,17 @@
+<div class=" col-12 paddingzero">
+  <div *ngIf="!hideInputText" class="input-group col-12 paddingzero">
+    <mat-form-field class="col-12" appearance="outline">
+      <mat-label class="col-sm-12 col-lg-6">{{employeeSearchPlaceHolder}}</mat-label>
+      <input matInput type="search" [value]="employeeSearchValue ? employeeSearchValue : 'Search User'" placeholder="employeeSearchPlaceHolder"
+        aria-label="Search" [readonly]="true">
+      <button mat-icon-button matSuffix (click)="openSearchEmployeeDialog()" aria-label="search">
+        <mat-icon matSuffix class="mat-suffix-icon-gray">search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div *ngIf="hideInputText" class="input-group col-12 paddingzero">
+    <button class="btn btn-outline-primary" type="submit" (click)="openSearchEmployeeDialog()" style="height: 44px; ">
+      {{ buttonPlaceHolder }}
+    </button>
+  </div>
+</div>

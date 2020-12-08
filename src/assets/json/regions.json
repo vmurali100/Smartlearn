@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "NA",
+    "code": "3000",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "name": "APAC",
+    "code": "3017",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "name": "LATM",
+    "code": "3019",
+    "description": ""
+  },
+  {
+    "id": 4,
+    "name": "APAC",
+    "code": "3021",
+    "description": ""
+  }
+]

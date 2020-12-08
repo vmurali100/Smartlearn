@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "US Dollars",
+        "code": "USD",
+        "description": "percent"
+    },
+    {
+        "id": 1,
+        "name": "Indian Rupees",
+        "code": "INR",
+        "description": "per mile"
+    },
+    {
+        "id": 1,
+        "name": "Euro",
+        "code": "Eur",
+        "description": "Each"
+    },
+    {
+        "id": 1,
+        "name": "Afghanistan Afghani",
+        "code": "AFN",
+        "description": "Each"
+    },
+    {
+        "id": 1,
+        "name": "Antillian Guilder",
+        "code": "ANG",
+        "description": "Fahrenheit"
+    }
+]

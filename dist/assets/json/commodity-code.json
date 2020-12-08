@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Software Maintenance and Support",
+        "code": "903460",
+        "description": "Software Maintenance and Support"
+    },
+    {
+        "id": 2,
+        "name": "IT Consulting",
+        "code": "905211",
+        "description": "IT Consulting"
+    },
+    {
+        "id": 3,
+        "name": "Software Licensing - License Management Software",
+        "code": "903450",
+        "description": "Software Licensing - License Management Software"
+    },
+    {
+        "id": 3,
+        "name": "Software as a Service",
+        "code": "903266",
+        "description": "Software as a Service"
+    }
+]

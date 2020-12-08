@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Tax Exempt",
+        "code": "TAXUSX:I0",
+        "description": "Tax Exempt"
+    },
+    {
+        "id": 2,
+        "name": "6 % Tax",
+        "code": "TAXUSX:I6",
+        "description": "6 % Tax"
+    }
+]

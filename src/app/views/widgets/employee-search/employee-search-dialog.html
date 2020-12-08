@@ -1,0 +1,160 @@
+<div class="container-fluid">
+  <div class="alert alert-success" style="background-color:rgb(231, 232, 233);">
+    <strong style="color: #0f445b; font-size: large;">Search user</strong>
+    <button style="color: #0f445b;" type=" button" class="close" data-dismiss="alert" aria-label="Close"
+      (click)="onNoClick()">
+      <i class="fa fa-times" aria-hidden="true" style="font-size: medium"></i>
+    </button>
+  </div>
+
+  <div>
+    <div class="col-12 row">
+      <div class="form-group col-4 paddingzero margin-bottom-0">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label class="col-sm-12 col-lg-6">First Name </mat-label>
+          <input matInput placeholder="Enter First Name " autocomplete="off" [(ngModel)]="fName" name="FirstName"
+            required  >
+        </mat-form-field>
+      </div>
+      <div class="form-group col-4 paddingzero margin-bottom-0">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label class="col-sm-12 col-lg-6">Last Name </mat-label>
+          <input matInput placeholder="Enter LastName " autocomplete="off" [(ngModel)]="lName" name="LastName" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group col-4 paddingzero margin-bottom-0">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label class="col-sm-12 col-lg-6">Global Id </mat-label>
+          <input matInput placeholder="Enter global Id " autocomplete="off" [(ngModel)]="gId" name="CourseId" required>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="col-12 row">
+      <div class="form-group pull-right-align" style="width: 100%">
+
+        <button type="button" class="btn btn-adient margin-left-10" (click)="clearSearch()">
+          Clear Search
+        </button>
+        <button type="button" class="btn btn-adient margin-left-10" (click)="searchUser()">
+          Search
+        </button>
+      </div>
+    </div>
+    <div class="col-12 row" style="margin-bottom: 10px" *ngIf="multiple === true && selectedUsers.length > 0">
+      <div class="col-12 row paddingzero">
+        <div class="col-2 details-key-main paddingzero">
+          <div class="col-12">
+            Selected Users
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="form-group col-12 paddingzero margin-bottom-0 row">
+            <div class="col-12 row">
+              <a class="userinnerbtn userinnerinputbrdr" style="color: gray;" *ngFor="let user of selectedUsers">
+                {{user.displayName}} ({{user.globalId}})
+                <i class="fa fa-times-circle" aria-hidden="true" style="vertical-align: text-top; font-size: 10px;"
+                  (click)="removeUser(user)"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isSearchResults" class="row" style="margin-bottom: 20px;">
+      <div class="col-sm-12">
+        <label style="font-weight:bold">Search Results</label>
+
+        <mat-table #table [dataSource]="dataSource">
+          <ng-container *ngIf="!multiple" matColumnDef="select">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <mat-radio-group [(ngModel)]="selectedUser">
+                <mat-radio-button (click)="onRadioSelected(element)" [value]="element"></mat-radio-button>
+              </mat-radio-group>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container *ngIf="multiple" matColumnDef="select">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <mat-checkbox (change)="onCheckboxChange(element, $event)">
+              </mat-checkbox>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="globalId">
+            <mat-header-cell *matHeaderCellDef> Global Id </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Id:</span>
+              {{element.globalId}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="givenName">
+            <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">First Name:</span>
+              {{element.givenName}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="surname">
+            <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Surname:</span>
+              {{element.surname}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="jobTitle">
+            <mat-header-cell *matHeaderCellDef> Job Title </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Job Title:</span>
+              {{element.jobTitle}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="officeLocation">
+            <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Location:</span>
+              {{element.officeLocation}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="mail">
+            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Email:</span>
+              {{element.mail}}
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons>
+        </mat-paginator>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isSearchResults" mat-dialog-actions style="margin-bottom: 20px">
+    <div class="form-group pull-right-align" style="width: 100%">
+      <button type="button" class="btn btn-adient margin-left-10" *ngIf="multiple===false"
+        [disabled]="dialogData === null" [mat-dialog-close]="dialogData">
+        Add User
+      </button>
+      <button type="button" class="btn btn-adient margin-left-10" *ngIf="multiple===true"
+        [disabled]="dialogData === null" [mat-dialog-close]="dialogData">
+        Add Users
+      </button>
+      <button type="button" class="btn btn-adient margin-left-10" (click)="onNoClick()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

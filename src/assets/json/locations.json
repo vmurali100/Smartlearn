@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Plymouth",
+    "code": "903460",
+    "description": ""
+  },
+  {
+    "id": 2,
+    "name": "Holland",
+    "code": "905211",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "name": "Northwood",
+    "code": "903450",
+    "description": ""
+  },
+  {
+    "id": 3,
+    "name": "Sycamore",
+    "code": "903266",
+    "description": ""
+  }
+]

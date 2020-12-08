@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "CTU",
+        "code": "403265",
+        "description": "Adient CTU",
+        "address_line_1": "49200 Halyard Dr",
+        "address_line_2": "",
+        "city": "Plymouth",
+        "state": "Michigan",
+        "country": "USA",
+        "zipcode": "48170"
+    },
+    {
+        "id": 2,
+        "name": "COE",
+        "code": "403266",
+        "description": "Adient COE",
+        "address_line_1": "47700 Halyard Dr",
+        "address_line_2": "",
+        "city": "Plymouth",
+        "state": "Michigan",
+        "country": "USA",
+        "zipcode": "48170"
+    },
+    {
+        "id": 3,
+        "name": "Adient Lakewood",
+        "code": "403267",
+        "description": "Adient Lakewood",
+        "address_line_1": "205 Douglas Ave",
+        "address_line_2": "",
+        "city": "Holland",
+        "state": "Michigan",
+        "country": "USA",
+        "zipcode": "48170"
+    }
+]

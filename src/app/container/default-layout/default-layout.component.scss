@@ -1,0 +1,65 @@
+.dropdown-header-main {
+    padding: 8px 20px;
+    background: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+.navbar-brand-minimized {
+    width: 120px !important;
+    background-color: transparent;
+}
+
+
+.active-link{
+    z-index: 1;
+    color: #00465B;
+    font-weight: bolder;
+}
+
+
+
+.menu-btn{
+  font-weight: bolder !important;
+  font-size: 16px;
+  padding:0px;
+}
+
+.app-header{
+  border-bottom: 0px;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,.12), inset 0 -1px 0 0 #dadce0;
+}
+
+
+.navbar-nav .open > .nav-link, .navbar-nav .open > .nav-link:hover, .navbar-nav .open > .nav-link:focus, .navbar-nav .active > .nav-link, .navbar-nav .active > .nav-link:hover, .navbar-nav .active > .nav-link:focus, .navbar-nav .nav-link.open, .navbar-nav .nav-link.open:hover, .navbar-nav .nav-link.open:focus, .navbar-nav .nav-link.active, .navbar-nav .nav-link.active:hover, .navbar-nav .nav-link.active:focus {
+    //color: #71c55d;
+    color: #616265;
+}
+
+.btn:hover {
+    color: #23282c;
+    text-decoration: none;
+    // color: #71c55d !important;
+    color: #616265 !important;
+}
+
+.btn {
+    color: #00465B !important;
+}
+
+.app-header .nav-item .nav-link {
+    color: #00465B !important;
+}
+
+.navbar #iconMenuDropdown {
+    width: 220px;
+    padding: 1.5rem 1rem;
+    height: 290px;
+}
+
+.cfooter {
+    height: 40px;
+    background-color: #fff!important;
+    box-shadow: 0 0 10px rgba(0,0,0,.12);
+    border-top: white;
+}

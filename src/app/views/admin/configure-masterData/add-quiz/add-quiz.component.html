@@ -1,0 +1,83 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 headerWrapper row">
+    <div class="col-lg-10 col-sm-12">
+      <!-- <h3 class="page-header"><span style="color: #bfd732"> π π π </span> Application Access </h3> -->
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <mat-card class="col-12">
+      <div class="col-12 col-sm-12 col-lg-12 col-md-12">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-end align-items-end flex-wrap row paddingzero">
+            <div class="input-group mb-3 mt-2 col-7 justify-content-end paddingzero">
+
+              <button type="button" class="btn btn-adient margin-left-15" (click)="openCreateAdminDialog()">
+                Create
+              </button>
+
+            </div>
+            <div class="input-group mb-3 mt-2 search-master col-3" style="padding-right: 0">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </div>
+              <input type="text" placeholder="Search" (keyup)="applyFilterMaster()" [(ngModel)]="searchMaster"
+                class="form-control">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+
+          <ng-container matColumnDef="globalId">
+            <mat-header-cell *matHeaderCellDef> Course Name </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Id:</span>
+              {{element.globalId}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Course ID </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Quiz type:</span>
+              {{element.name}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef> No of Quiz </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">No of Quiz:</span>
+              {{element.email}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="officeLocation">
+            <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Location:</span>
+              {{element.officeLocation}}
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <span class="mobile-label">Action:</span>
+              <button class="btn redColor" (click)="deleteAdmin(element)"><i class="fa fa-trash-o fa-lg"></i></button>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10" showFirstLastButtons>
+        </mat-paginator>
+      </div>
+    </mat-card>
+  </div>
+</div>
