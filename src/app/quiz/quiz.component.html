@@ -2,10 +2,7 @@
   <div>
     <h2 class="mt-2">{{ courseName }}</h2>
     <p class="countdown text-right">
-      <countdown
-        [config]="{ leftTime: 1800 }"
-        (event)="onTimerFinished($event)"
-      ></countdown>
+      <countdown [config]="{ leftTime: 1800 }"></countdown>
     </p>
 
     <div class="card-body" *ngIf="!isQuizCompleted">
@@ -65,7 +62,7 @@
             type="button"
             class="btn btn-primary"
             style="margin: 10px"
-            (click)="submitAnswer(quizForm)"
+            (click)="submitAnswer(quizForm); onTimerFinished($event)"
             [disabled]="test"
           >
             Submit
