@@ -4,11 +4,7 @@ export const navItems1 = [
     url: "/",
     icon: "fa fa-tachometer",
   },
-  // {
-  //   name: 'Requests',
-  //   url: '/generic-reports',
-  //   icon: 'fa fa-file-text-o',
-  // },
+
   {
     name: "Admin",
     url: "/admin/configure",

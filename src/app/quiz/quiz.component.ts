@@ -235,79 +235,79 @@ const quizQuestions = [
     correctAnswer: "Bell Labs",
     answertype: "multiple",
   },
-  {
-    question: "Which of the following is not a Java features?",
-    answers: [
-      "Dynamic",
-      "Architecture Neutral",
-      "Use of pointers ",
-      "Object-oriented",
-    ],
-    correctAnswer: "Use of pointers",
-    answertype: "multiple",
-  },
-  {
-    question:
-      "In which process, a local variable has the same name as one of the instance variables?",
-    answers: [
-      "Serialization",
-      "Variable Shadowing",
-      " Abstraction ",
-      "Multi-threading",
-    ],
-    correctAnswer: "Multi-threading",
-    answertype: "multiple",
-  },
-  {
-    question: "The \u0021 article referred to as a.",
-    answers: [
-      "Unicode escape sequence",
-      "Octal escape",
-      "Hexadecimal ",
-      "Line feed",
-    ],
-    correctAnswer: "Unicode escape sequence",
-    answertype: "multiple",
-  },
-  {
-    question:
-      "What is the return type of the hashCode() method in the Object class?",
-    answers: ["Object", "int", "long ", "void"],
-    correctAnswer: "int",
-    answertype: "multiple",
-  },
-  {
-    question:
-      "Which of the following tool is used to generate API documentation in HTML format from doc comments in source code'?",
-    answers: ["javap tool", "javaw command", "Javadoc tool ", "javah command"],
-    correctAnswer: "javaw command",
-    answertype: "multiple",
-  },
-  {
-    question:
-      " In which process, a local variable has the same name as one of the instance variables?",
-    answers: [
-      "Serialization",
-      "Variable Shadowing",
-      "Abstraction ",
-      "Multi-threading",
-    ],
-    correctAnswer: "Multi-threading",
-    answertype: "multiple",
-  },
-  {
-    question:
-      "Which of the following is an immediate subclass of the Panel class?",
-    answers: ["Applet class", "Window class", "Frame class ", "Dialog class"],
-    correctAnswer: "Applet class",
-    answertype: "multiple",
-  },
-  {
-    question: "Which of the following is a reserved keyword in Java?",
-    answers: ["object", "strictfp", "main ", "system"],
-    correctAnswer: "main",
-    answertype: "multiple",
-  },
+  // {
+  //   question: "Which of the following is not a Java features?",
+  //   answers: [
+  //     "Dynamic",
+  //     "Architecture Neutral",
+  //     "Use of pointers ",
+  //     "Object-oriented",
+  //   ],
+  //   correctAnswer: "Use of pointers",
+  //   answertype: "multiple",
+  // },
+  // {
+  //   question:
+  //     "In which process, a local variable has the same name as one of the instance variables?",
+  //   answers: [
+  //     "Serialization",
+  //     "Variable Shadowing",
+  //     " Abstraction ",
+  //     "Multi-threading",
+  //   ],
+  //   correctAnswer: "Multi-threading",
+  //   answertype: "multiple",
+  // },
+  // {
+  //   question: "The \u0021 article referred to as a.",
+  //   answers: [
+  //     "Unicode escape sequence",
+  //     "Octal escape",
+  //     "Hexadecimal ",
+  //     "Line feed",
+  //   ],
+  //   correctAnswer: "Unicode escape sequence",
+  //   answertype: "multiple",
+  // },
+  // {
+  //   question:
+  //     "What is the return type of the hashCode() method in the Object class?",
+  //   answers: ["Object", "int", "long ", "void"],
+  //   correctAnswer: "int",
+  //   answertype: "multiple",
+  // },
+  // {
+  //   question:
+  //     "Which of the following tool is used to generate API documentation in HTML format from doc comments in source code'?",
+  //   answers: ["javap tool", "javaw command", "Javadoc tool ", "javah command"],
+  //   correctAnswer: "javaw command",
+  //   answertype: "multiple",
+  // },
+  // {
+  //   question:
+  //     " In which process, a local variable has the same name as one of the instance variables?",
+  //   answers: [
+  //     "Serialization",
+  //     "Variable Shadowing",
+  //     "Abstraction ",
+  //     "Multi-threading",
+  //   ],
+  //   correctAnswer: "Multi-threading",
+  //   answertype: "multiple",
+  // },
+  // {
+  //   question:
+  //     "Which of the following is an immediate subclass of the Panel class?",
+  //   answers: ["Applet class", "Window class", "Frame class ", "Dialog class"],
+  //   correctAnswer: "Applet class",
+  //   answertype: "multiple",
+  // },
+  // {
+  //   question: "Which of the following is a reserved keyword in Java?",
+  //   answers: ["object", "strictfp", "main ", "system"],
+  //   correctAnswer: "main",
+  //   answertype: "multiple",
+  // },
   {
     question: "Boolean Question?",
     answers: ["True", "False"],

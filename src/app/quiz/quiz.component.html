@@ -219,7 +219,9 @@
       </div>
     </div>
     <div *ngIf="isQuizCompleted">
-      <h2>Congrats .. You Scored {{ score }} out of 10</h2>
+      <h2>
+        Congrats .. You Scored {{ score }} out of {{ quizDetails.length }}
+      </h2>
       <img
         src="assets/back.png"
         alt="Back"
