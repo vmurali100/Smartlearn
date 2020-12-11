@@ -65,10 +65,10 @@ export class CommodityCodeComponent implements OnInit {
   columnsToDisplay = ["code", "name", "email", "description", "action"];
   columnsToDisplayObjects: DisplayColumn[] = [
     { ColumnCode: "code", ColumnName: "Course ID" },
-    { ColumnCode: "name", ColumnName: "Course Name" },
-    { ColumnCode: "email", ColumnName: "Email" },
-    { ColumnCode: "description", ColumnName: "Roll" },
-    { ColumnCode: "action", ColumnName: "Action" },
+    { ColumnCode: "name", ColumnName: "Name" },
+    { ColumnCode: "email", ColumnName: "Functional Area" },
+    { ColumnCode: "description", ColumnName: "Owner" },
+    { ColumnCode: "action", ColumnName: "Content" },
   ];
   expandedElement: any | null;
 

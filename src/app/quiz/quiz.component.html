@@ -1,8 +1,11 @@
 <div class="container">
-  <div class="card">
-    <h5 class="card-header">Quiz</h5>
-    <p>
-      <countdown [config]="{leftTime: 1800} " (event)="onTimerFinished($event)"></countdown>
+  <div>
+    <h2 class="mt-2">{{ courseName }}</h2>
+    <p class="countdown text-right">
+      <countdown
+        [config]="{ leftTime: 1800 }"
+        (event)="onTimerFinished($event)"
+      ></countdown>
     </p>
 
     <div class="card-body" *ngIf="!isQuizCompleted">
@@ -11,33 +14,81 @@
       </h5>
       <form #quizForm="ngForm">
         <div class="row" *ngIf="currQuestion.answertype === 'single'">
-          <div class="col-md-6 answ" *ngFor="let answer of currQuestion.answers">
+          <div
+            class="col-md-6 answ"
+            *ngFor="let answer of currQuestion.answers"
+          >
             <div style="text-align: left">
-              <input type="radio" value="{{ answer }}" name="answer" ngModel style="margin-right: 20px"
-                (click)=" check()" />{{ answer }}
+              <input
+                type="radio"
+                value="{{ answer }}"
+                name="answer"
+                ngModel
+                style="margin-right: 20px"
+                (click)="check()"
+              />{{ answer }}
             </div>
           </div>
-          <div class="col-md-6 center">
-            <button type="button" class="btn btn-primary" style="margin: 10px" (click)="submitAnswer(quizForm)"
-              [disabled]=test>
-              Submit
+          <div class="col-md-12 center" style="text-align: center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="margin: 10px"
+              (click)="goToPrevQuestion()"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="margin: 10px"
+              (click)="submitAnswer(quizForm)"
+              [disabled]="test"
+            >
+              Next
             </button>
           </div>
         </div>
         <div class="row" *ngIf="currQuestion.answertype === 'image'">
           <div class="col-12">
-            <img [src]="currQuestion.url" alt="" style="width: 100px; height: 100px;">
+            <img
+              [src]="currQuestion.url"
+              alt=""
+              style="width: 100px; height: 100px"
+            />
           </div>
-          <div class="col-md-6 answ" *ngFor="let answer of currQuestion.answers">
+          <div
+            class="col-md-6 answ"
+            *ngFor="let answer of currQuestion.answers"
+          >
             <div style="text-align: left">
-              <input type="radio" value="{{ answer }}" name="answer" ngModel style="margin-right: 20px"
-                (click)=" check()" />{{ answer }}
+              <input
+                type="radio"
+                value="{{ answer }}"
+                name="answer"
+                ngModel
+                style="margin-right: 20px"
+                (click)="check()"
+              />{{ answer }}
             </div>
           </div>
-          <div class="col-md-6 center">
-            <button type="button" class="btn btn-primary" style="margin: 10px" (click)="submitAnswer(quizForm)"
-              [disabled]=test>
-              Submit
+          <div class="col-md-12" style="text-align: center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="margin: 10px"
+              (click)="goToPrevQuestion()"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="margin: 10px"
+              (click)="submitAnswer(quizForm)"
+              [disabled]="test"
+            >
+              Next
             </button>
           </div>
         </div>
@@ -46,15 +97,34 @@
         <div class="col-md-6 answ" *ngFor="let answer of currQuestion.answers">
           <div tyle="text-align: left">
             <form #quizForm="ngForm">
-              <input type="checkbox" value="{{ answer }}" name="answer" ngModel style="margin-right: 20px"
-                (change)="onChange(answer, $event.target.checked)" />{{ answer }}
+              <input
+                type="checkbox"
+                value="{{ answer }}"
+                name="answer"
+                ngModel
+                style="margin-right: 20px"
+                (change)="onChange(answer, $event.target.checked)"
+              />{{ answer }}
             </form>
           </div>
         </div>
-        <div class="col-md-6">
-          <button type="button" class="btn btn-primary" style="margin: 10px" (click)="submitAnswer(quizForm)"
-            [disabled]=test>
-            Submit
+        <div class="col-md-12" style="text-align: center">
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="margin: 10px"
+            (click)="goToPrevQuestion()"
+          >
+            Back
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="margin: 10px"
+            (click)="submitAnswer(quizForm)"
+            [disabled]="test"
+          >
+            Next
           </button>
         </div>
       </div>
@@ -63,45 +133,99 @@
           <div class="example-container col-md-12">
             <h5>From</h5>
 
-            <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+            <div
+              cdkDropList
+              [cdkDropListData]="todo"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div class="example-box" *ngFor="let item of todo" cdkDrag>
+                {{ item }}
+              </div>
             </div>
           </div>
 
           <div class="example-container">
             <h5>To</h5>
 
-            <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+            <div
+              cdkDropList
+              [cdkDropListData]="done"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div class="example-box" *ngFor="let item of done" cdkDrag>
+                {{ item }}
+              </div>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-12">
-          <button type="button" class="btn btn-primary" style="margin: 10px" (click)="submitAnswer(quizForm)"
-            [disabled]=test>
-            Submit
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="margin: 10px"
+            (click)="goToPrevQuestion()"
+          >
+            Back
           </button>
-          
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="margin: 10px"
+            (click)="submitAnswer(quizForm)"
+            [disabled]="test"
+          >
+            Next
+          </button>
         </div>
       </div>
       <div class="row" *ngIf="currQuestion.answertype === 'quiz'">
-       <div class="answ"> <div cdkDropList class="example-list" (cdkDropListDropped)="dropquiz($event)">
-        <div class="example-box" *ngFor="let movie of currQuestion.answers" cdkDrag>{{movie}}</div>
-      </div></div>
+        <div class="answ">
+          <div
+            cdkDropList
+            class="example-list"
+            (cdkDropListDropped)="dropquiz($event)"
+          >
+            <div
+              class="example-box"
+              *ngFor="let movie of currQuestion.answers"
+              cdkDrag
+            >
+              {{ movie }}
+            </div>
+          </div>
+        </div>
         <div class="col-md-12">
-          <button type="button" class="btn btn-primary" style="margin: 10px" (click)="submitAnswer(quizForm)"
-            [disabled]=test>
-            Submit
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="margin: 10px"
+            (click)="goToPrevQuestion()"
+          >
+            Back
           </button>
-          
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="margin: 10px"
+            (click)="submitAnswer(quizForm)"
+            [disabled]="test"
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
     <div *ngIf="isQuizCompleted">
       <h2>Congrats .. You Scored {{ score }} out of 10</h2>
-      <img src="assets/back.png" alt="Back" routerLink="/dashboard"
-        style="width: 50px; margin-left: 20px; cursor: pointer" />
+      <img
+        src="assets/back.png"
+        alt="Back"
+        routerLink="/dashboard"
+        style="width: 50px; margin-left: 20px; cursor: pointer"
+      />
     </div>
   </div>
 </div>

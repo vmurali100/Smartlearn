@@ -21,6 +21,7 @@
                     type="button"
                     class="btn btn-sm btn-outline-secondary"
                     [routerLink]="['/dashboard', course.courseName]"
+                    (click)="saveCourseName(course.courseName)"
                   >
                     Launch
                   </button>

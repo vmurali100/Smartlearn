@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-coursedetails',
-  templateUrl: './coursedetails.component.html',
-  styleUrls: ['./coursedetails.component.scss'],
+  selector: "app-coursedetails",
+  templateUrl: "./coursedetails.component.html",
+  styleUrls: ["./coursedetails.component.scss"],
 })
 export class CoursedetailsComponent implements OnInit {
   coursedetails;
@@ -17,22 +17,24 @@ export class CoursedetailsComponent implements OnInit {
   pythonMegaCouse = null;
   pythonPrograming = null;
   isEnded = false;
+  courseName: string;
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.courseName = localStorage.getItem("courseName");
     this.activatedRoute.params.subscribe((res) => {
-      this.coursedetails = res['course'];
-      if (this.coursedetails == 'python') {
+      this.coursedetails = res["course"];
+      if (this.coursedetails == "python") {
         this.python = true;
-      } else if (this.coursedetails == 'DataScience') {
+      } else if (this.coursedetails == "DataScience") {
         this.DataScience = true;
-      } else if (this.coursedetails == 'javascript') {
+      } else if (this.coursedetails == "javascript") {
         this.javascript = true;
-      } else if (this.coursedetails == 'pythonMegaCouse') {
+      } else if (this.coursedetails == "pythonMegaCouse") {
         this.pythonMegaCouse = true;
-      } else if (this.coursedetails == 'pythonPrograming') {
+      } else if (this.coursedetails == "pythonPrograming") {
         this.pythonPrograming = true;
-      } else if (this.coursedetails == 'machineLearning') {
+      } else if (this.coursedetails == "machineLearning") {
         this.machineLearning = true;
       }
     });
@@ -45,6 +47,3 @@ export class CoursedetailsComponent implements OnInit {
     this.isEnded = true;
   }
 }
-
-
-
