@@ -13,7 +13,11 @@
         {{ qIndex + 1 }} . {{ currQuestion.question }}
       </h5>
       <form #quizForm="ngForm">
-        <div class="row" *ngIf="currQuestion.answertype === 'single'">
+        <div
+          class="row"
+          style="text-align: left"
+          *ngIf="currQuestion.answertype === 'single'"
+        >
           <div
             class="col-md-6 answ"
             *ngFor="let answer of currQuestion.answers"
@@ -29,7 +33,11 @@
               />{{ answer }}
             </div>
           </div>
-          <div class="col-md-12 center" style="text-align: center">
+          <div
+            class="col-md-12 center"
+            style="text-align: center"
+            *ngIf="qIndex < quizDetails.length - 1"
+          >
             <button
               type="button"
               class="btn btn-primary"
@@ -49,6 +57,21 @@
             </button>
           </div>
         </div>
+        <div
+          *ngIf="qIndex == quizDetails.length - 1"
+          style="text-align: center"
+        >
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="margin: 10px"
+            (click)="submitAnswer(quizForm)"
+            [disabled]="test"
+          >
+            Submit
+          </button>
+        </div>
+
         <div class="row" *ngIf="currQuestion.answertype === 'image'">
           <div class="col-12">
             <img
