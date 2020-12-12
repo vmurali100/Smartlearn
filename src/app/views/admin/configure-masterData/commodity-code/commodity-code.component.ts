@@ -22,24 +22,29 @@ const ELEMENT_DATA: any[] = [
     id: 1,
     name: "Software Maintenance and Support",
     code: "903460",
+    functionalArea: "HR",
     description: "Software Maintenance and Support",
   },
   {
     id: 2,
     name: "IT Consulting",
     code: "905211",
+    functionalArea: "Accounts",
+
     description: "IT Consulting",
   },
   {
     id: 3,
     name: "Software Licensing - License Management Software",
     code: "903450",
+    functionalArea: "Project Management",
     description: "Software Licensing - License Management Software",
   },
   {
     id: 3,
     name: "Software as a Service",
     code: "903266",
+    functionalArea: "Development",
     description: "Software as a Service",
   },
 ];
@@ -62,11 +67,17 @@ const ELEMENT_DATA: any[] = [
 export class CommodityCodeComponent implements OnInit {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  columnsToDisplay = ["code", "name", "email", "description", "action"];
+  columnsToDisplay = [
+    "code",
+    "name",
+    "description",
+    "functionalArea",
+    "action",
+  ];
   columnsToDisplayObjects: DisplayColumn[] = [
     { ColumnCode: "code", ColumnName: "Course ID" },
     { ColumnCode: "name", ColumnName: "Name" },
-    { ColumnCode: "email", ColumnName: "Functional Area" },
+    { ColumnCode: "functionalArea", ColumnName: "Functional Area" },
     { ColumnCode: "description", ColumnName: "Owner" },
     { ColumnCode: "action", ColumnName: "Content" },
   ];
