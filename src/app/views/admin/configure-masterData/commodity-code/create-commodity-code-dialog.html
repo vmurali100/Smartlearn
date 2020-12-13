@@ -1,50 +1,139 @@
 <div class="col-12">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 headerWrapper row">
-    <div class="col-12">
-      <h4 class="page-header"><span style="color: #bfd732"> π π π </span>Add Course </h4>
-      <button class="close" tabindex='-1' mat-button (click)=" onNoClick()">X</button>
-      <hr>
+    <h4 class="page-header">
+      <span style="color: #bfd732"> π π π </span>Add Course
+    </h4>
+    <button class="close" tabindex="-1" mat-button (click)=" onNoClick()">
+      X
+    </button>
+    <hr />
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="course">
+        <mat-label class="col-sm-10 col-lg-6">Course Code </mat-label>
+        <input
+          matInput
+          placeholder="Enter Course ID "
+          name="CostCenter"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="course">
+        <mat-label class="col-sm-10 col-lg-6"> Course Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter Course Name "
+          name="CostCenter"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="course">
+        <mat-label class="col-sm-10 col-lg-6">Course Description </mat-label>
+        <textarea
+          matInput
+          placeholder="Enter Course Description"
+          rows="5"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="fill" class="course">
+        <mat-label>Course Type</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let course of courses" [value]="course.value">
+            {{course.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="fill" class="course">
+        <mat-label>Functional Area</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let functional of functionalAreas"
+            [value]="functional.value"
+          >
+            {{functional.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <mat-form-field appearance="outline" class="course">
+        <mat-label class="col-sm-10 col-lg-6">Owner Name </mat-label>
+        <input
+          matInput
+          placeholder="Enter Owner Name"
+          name="CostCenter"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-6">
+      <input class="ng-hide" id="input-file-id" multiple type="file" />
+      <label for="input-file-id" class="md-button md-raised md-primary"
+        >Choose Files</label
+      >
+    </div>
+    <div class="col-6" style="text-align: right">
+      <button mat-raised-button color="primary">Add Course</button>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <!-- <div class="col-12">
-      <div class="col-12 row">
-        <div class="col-2 details-key-main">
-          <div class="col-12">
-            User:
-          </div>
-        </div>
-        <div class="col-10">
-          <div class="form-group col-4 paddingzero margin-bottom-0 row">
-            <app-employee-search class="col-12" [employeeSearchValue]="'Search User'"
-              [buttonPlaceHolder]="'Search User'" [employeeSearchPlaceHolder]="'Search User'" [multiple]=false
-              [hideInputText]=false (selectedUserListener)="getSelectedUsers($event)">
-            </app-employee-search>
-          </div>
-        </div>
-      </div> -->
-    <div class="container-fluid" style="margin-top: 20px; margin-bottom: 10px;">
+  <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 headerWrapper row">
+    <div class="col-12">
+      <h4 class="page-header">
+        <span style="color: #bfd732"> π π π </span>Add Quiz
+      </h4>
+      <button class="close" tabindex="-1" mat-button (click)=" onNoClick()">
+        X
+      </button>
+      <hr />
+    </div>
+  </div> -->
+  <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="container-fluid" style="margin-top: 20px; margin-bottom: 10px">
       <div class="col-12 row">
         <div class="form-group col-6 paddingzero">
-          <mat-form-field class="col-10" appearance="outline">
+          <mat-form-field appearance="outline">
             <mat-label class="col-sm-10 col-lg-6">Course Code </mat-label>
-            <input matInput placeholder="Enter Course ID " name="CostCenter" required>
+            <input
+              matInput
+              placeholder="Enter Course ID "
+              name="CostCenter"
+              required
+            />
           </mat-form-field>
         </div>
         <div class="form-group col-6 paddingzero">
           <mat-form-field class="col-10" appearance="outline">
             <mat-label class="col-sm-10 col-lg-6"> Course Name</mat-label>
-            <input matInput placeholder="Enter Course Name " name="CostCenter" required>
+            <input
+              matInput
+              placeholder="Enter Course Name "
+              name="CostCenter"
+              required
+            />
           </mat-form-field>
         </div>
       </div>
 
-
       <div class="col-6 row">
         <div class="form-group col-10 paddingzero">
           <mat-form-field class="col-10" appearance="outline">
-            <mat-label class="col-sm-10 col-lg-6">Course Description </mat-label>
-            <textarea matInput placeholder="Enter Course Description" rows="5"></textarea>
+            <mat-label class="col-sm-10 col-lg-6"
+              >Course Description
+            </mat-label>
+            <textarea
+              matInput
+              placeholder="Enter Course Description"
+              rows="5"
+            ></textarea>
           </mat-form-field>
         </div>
       </div>
@@ -53,43 +142,57 @@
         <div class="form-group col-10 paddingzero">
           <mat-form-field class="col-10" appearance="outline">
             <mat-label class="col-sm-10 col-lg-6">Course conten </mat-label>
-            <textarea matInput placeholder="Enter Course conten" rows="5"></textarea>
+            <textarea
+              matInput
+              placeholder="Enter Course conten"
+              rows="5"
+            ></textarea>
           </mat-form-field>
         </div>
       </div>
       <div class="col-12">
         <div class="col-10 row">
           <div class="col-10 details-key-main">
-            <div class="col-10">
-              User:
-            </div>
+            <div class="col-10">User:</div>
           </div>
           <div class="col-10">
             <div class="form-group col-6 paddingzero margin-bottom-0 row">
-              <app-employee-search class="col-12" [employeeSearchValue]="employeeSearchValue"
-                [buttonPlaceHolder]="'Search User'" [employeeSearchPlaceHolder]="'Search User'" [multiple]=false
-                [hideInputText]=false (selectedUserListener)="getSelectedUsers($event)" [openDialog]="false">
+              <app-employee-search
+                class="col-12"
+                [employeeSearchValue]="employeeSearchValue"
+                [buttonPlaceHolder]="'Search User'"
+                [employeeSearchPlaceHolder]="'Search User'"
+                [multiple]="false"
+                [hideInputText]="false"
+                (selectedUserListener)="getSelectedUsers($event)"
+                [openDialog]="false"
+              >
               </app-employee-search>
             </div>
           </div>
         </div>
         <div class="col-12">
-          <div *ngIf="isSearchResults" class="row" style="margin-bottom: 20px;">
+          <div *ngIf="isSearchResults" class="row" style="margin-bottom: 20px">
             <div class="col-sm-12">
-              <label style="font-weight:bold">Search Results</label>
+              <label style="font-weight: bold">Search Results</label>
 
               <mat-table #table [dataSource]="dataSource">
                 <ng-container matColumnDef="select">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
                   <mat-cell *matCellDef="let element">
                     <mat-radio-group [(ngModel)]="selectedUser">
-                      <mat-radio-button (click)="onRadioSelected(element)" [value]="element"></mat-radio-button>
+                      <mat-radio-button
+                        (click)="onRadioSelected(element)"
+                        [value]="element"
+                      ></mat-radio-button>
                     </mat-radio-group>
                   </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="globalId">
-                  <mat-header-cell *matHeaderCellDef> Global Id </mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    Global Id
+                  </mat-header-cell>
                   <mat-cell *matCellDef="let element">
                     <span class="mobile-label">Id:</span>
                     {{element.globalId}}
@@ -97,7 +200,9 @@
                 </ng-container>
 
                 <ng-container matColumnDef="givenName">
-                  <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    First Name
+                  </mat-header-cell>
                   <mat-cell *matCellDef="let element">
                     <span class="mobile-label">First Name:</span>
                     {{element.givenName}}
@@ -113,7 +218,9 @@
                 </ng-container>
 
                 <ng-container matColumnDef="jobTitle">
-                  <mat-header-cell *matHeaderCellDef> Job Title </mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    Job Title
+                  </mat-header-cell>
                   <mat-cell *matCellDef="let element">
                     <span class="mobile-label">Job Title:</span>
                     {{element.jobTitle}}
@@ -121,7 +228,9 @@
                 </ng-container>
 
                 <ng-container matColumnDef="officeLocation">
-                  <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef>
+                    Location
+                  </mat-header-cell>
                   <mat-cell *matCellDef="let element">
                     <span class="mobile-label">Location:</span>
                     {{element.officeLocation}}
@@ -136,26 +245,35 @@
                   </mat-cell>
                 </ng-container>
 
-                <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
-                <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+                <mat-header-row
+                  *matHeaderRowDef="columnsToDisplay"
+                ></mat-header-row>
+                <mat-row
+                  *matRowDef="let row; columns: columnsToDisplay;"
+                ></mat-row>
               </mat-table>
-              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons>
+              <mat-paginator
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                [pageSize]="5"
+                showFirstLastButtons
+              >
               </mat-paginator>
-
             </div>
           </div>
         </div>
-        <hr>
+        <hr />
         <div class="col-12 pull-right-align">
           <div class="col-12 pull-right-align">
             <div class="col-12 pull-right-align">
-              <button class="btn btn-adient" (click)="onNoClick()">Cancel</button> &nbsp;&nbsp;
+              <button class="btn btn-adient" (click)="onNoClick()">
+                Cancel
+              </button>
+              &nbsp;&nbsp;
               <button class="btn btn-adient">Create</button>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
-  </div>
+  </div> -->
+</div>

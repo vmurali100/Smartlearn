@@ -120,7 +120,6 @@ export class CommodityCodeComponent implements OnInit {
   openCreateCommodityCodeDialog(): void {
     const dialogRef = this.dialog.open(CreateCommodityCodeDialog, {
       width: "900px",
-      height: "500px",
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -138,6 +137,10 @@ export class CommodityCodeComponent implements OnInit {
       console.log("The dialog was closed");
     });
   }
+}
+interface Course {
+  value: string;
+  viewValue: string;
 }
 
 @Component({
@@ -161,6 +164,18 @@ export class CreateCommodityCodeDialog {
     "officeLocation",
     "mail",
   ];
+  courses: Course[] = [
+    { value: "Video", viewValue: "Video" },
+    { value: "PPT", viewValue: "PPT" },
+    { value: "PDF", viewValue: "PDF" },
+  ];
+  functionalAreas = [
+    { value: "Accounts", viewValue: "Accounts" },
+    { value: "HR", viewValue: "HR" },
+    { value: "IT", viewValue: "IT" },
+    { value: "Project Management", viewValue: "Project Management" },
+    { value: "Development", viewValue: "Development" },
+  ];
   constructor(
     public dialogRef: MatDialogRef<CreateCommodityCodeDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any
@@ -170,7 +185,6 @@ export class CreateCommodityCodeDialog {
     this.dialogRef.close();
   }
   getSelectedUsers(event) {
-    console.log(event);
     if (event.length) {
       this.isSearchResults = true;
       this.dataSource = new MatTableDataSource(event);
